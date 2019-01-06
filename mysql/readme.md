@@ -28,6 +28,13 @@ mysql> use todos;
 mysql> show tables;
 mysql> select * from employees;
 
+** Connecting to the container using mysql client
+First of all we need to find the container's IP address
+$ docker inspect docker-test-mysql 
+
+Look for the line Networks > "IPAddress": "172.17.0.2"
+$ mysql -uroot -p -h 172.17.0.2
+(letmein)
 
 
 
