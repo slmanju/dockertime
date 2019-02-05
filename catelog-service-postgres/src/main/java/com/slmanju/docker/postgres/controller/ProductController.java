@@ -22,7 +22,12 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @PostMapping
+    @GetMapping("/echo")
+    public ResponseEntity<String> echo() {
+        return ResponseEntity.ok("Hello World");
+    }
+
+    @PostMapping("/products/save")
     public ResponseEntity<ProductView> save(@RequestBody ProductView productView) {
         LOGGER.info(":: save :: ", productView);
         return ResponseEntity.ok(productService.save(productView));
@@ -34,7 +39,7 @@ public class ProductController {
         return ResponseEntity.ok(productService.findAll());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/products/{id}")
     public ResponseEntity<ProductView> findById(@PathVariable("id") String id) {
         LOGGER.info(":: find by id ::", id);
         return ResponseEntity.ok(productService.findById(id));
