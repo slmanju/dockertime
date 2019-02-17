@@ -22,8 +22,15 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @GetMapping("/")
+    public ResponseEntity<String> home() {
+        LOGGER.info(":: home :: ");
+        return ResponseEntity.ok("Hello World");
+    }
+
     @GetMapping("/echo")
     public ResponseEntity<String> echo() {
+        LOGGER.info(":: echo :: ");
         return ResponseEntity.ok("Hello World");
     }
 
