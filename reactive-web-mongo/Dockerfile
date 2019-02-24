@@ -6,4 +6,4 @@ COPY target/reactive-web-mongo-0.0.1-SNAPSHOT.jar reactive-web-mongo-0.0.1-SNAPS
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "/reactive-web-mongo-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=docker", "/reactive-web-mongo-0.0.1-SNAPSHOT.jar"]

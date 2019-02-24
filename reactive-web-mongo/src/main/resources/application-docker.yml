@@ -1,9 +1,6 @@
-server:
-  port: 8080
-
 spring:
   data:
     mongodb:
-      host: localhost
+      host: mongo-container
       port: 27017
       database: springreactive
