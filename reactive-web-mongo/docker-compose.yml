@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  app-mongo:
+    image: mongo:latest
+    container_name: mongo-container
+    ports:
+      - 27018:27017
+
+  app-api:
+    build: .
+    container_name: app-container
+    ports:
+      - 8081:8080
+    depends_on:
+      - app-mongo
